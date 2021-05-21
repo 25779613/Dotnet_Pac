@@ -1,0 +1,23 @@
+<h1>Subjects</h1>
+
+@foreach(var subject in (IEnumerable<string>)ViewData["subjects"])
+{
+    <ul>
+        <li>@subject</li>
+    </ul>
+}
+
+<div>
+    <form asp-controller="Student" asp-action ="Index" method ="post">
+        <input type="text" name ="studentName" placeholder="Enter name"/>
+        <input type="text" name ="studentEmail" placeholder="Enter email"/>
+        <input type="text" name ="studentNumber" placeholder="Enter student number"/>
+        <select name="subject">
+            <option value="math">Math</option>
+            <option value="science">Science</option>
+            <option value="english">English</option>
+        </select>
+        <textarea type ="text" name="studentDetails"></textarea>
+        <button type ="submit"></button>
+    </form>
+</div>
