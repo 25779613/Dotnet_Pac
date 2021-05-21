@@ -13,21 +13,23 @@ namespace Dotnet_Prac.Controllers
     {
          public IActionResult Index()
          {
-            string[] subjects ={"math","science","english"};
-            ViewData["subjects"] = subjects;
-             return View();
+            return View();
          }
 
+        [HttpPost]
          public IActionResult Index(string studentName,string studentEmail, string studentNumber,string subject,string studentDetails)
          {
-            
+            Console.WriteLine(studentName);
              return View();
          }
 
 
          public IActionResult List()
          {
+             string[] subjects ={"math","science","english"};
+             ViewData["subjects"] = subjects;
              return View();
+             
          }
     }
 }
