@@ -35,3 +35,5 @@ C:\Users\SALMAN\Desktop\Dotnet_prac\Dotnet_Prac\obj\Debug\netcoreapp3.1\Dotnet_P
 C:\Users\SALMAN\Desktop\Dotnet_prac\Dotnet_Prac\obj\Debug\netcoreapp3.1\Dotnet_Prac.pdb
 C:\Users\SALMAN\Desktop\Dotnet_prac\Dotnet_Prac\obj\Debug\netcoreapp3.1\Dotnet_Prac.genruntimeconfig.cache
 C:\Users\SALMAN\Desktop\Dotnet_prac\Dotnet_Prac\obj\Debug\netcoreapp3.1\Dotnet_Prac.csproj.CopyComplete
+C:\Users\SALMAN\Desktop\Dotnet_prac\Dotnet_Prac\obj\Debug\netcoreapp3.1\Razor\Views\Student\Index.cshtml.g.cs
+C:\Users\SALMAN\Desktop\Dotnet_prac\Dotnet_Prac\obj\Debug\netcoreapp3.1\Razor\Views\Student\List.cshtml.g.cs

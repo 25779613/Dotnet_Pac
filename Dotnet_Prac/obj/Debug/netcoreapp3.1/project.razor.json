@@ -14417,6 +14417,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\SALMAN\\Desktop\\Dotnet_prac\\Dotnet_Prac\\Views\\Student\\index.cshtml",
+      "TargetPath": "Views\\Student\\index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\SALMAN\\Desktop\\Dotnet_prac\\Dotnet_Prac\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -14434,6 +14439,11 @@
     {
       "FilePath": "c:\\Users\\SALMAN\\Desktop\\Dotnet_prac\\Dotnet_Prac\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\SALMAN\\Desktop\\Dotnet_prac\\Dotnet_Prac\\Views\\Student\\list.cshtml",
+      "TargetPath": "Views\\Student\\list.cshtml",
       "FileKind": "mvc"
     }
   ],
