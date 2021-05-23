@@ -1,0 +1,35 @@
+//download sql package(VSC)
+dotnet add package MysqlConnector
+
+//Create DB
+phpmyAdmin
+
+//add conection in appsettings.json
+,
+  "ConnectionStrings": {
+    "default":"server=localhost;user=root;password=;database="}
+
+//add remaining dependancies(VSC)(find dependancies in .csproj)
+dotnet add package MySql.EntityframeworkCore --version 5.0.3.1
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.Design
+
+/*migration in startup.cs, void ConfigureServices
+var config = Configuration["ConnectionStrings:Default"];
+services.AddTransient<MySqlConnection>(_ => new MySqlConnection(config));
+services.AddDbContext<StudentContext>(options => options.UseMySQL(config));
+//create model then <model>Context :DbContext (both.cs)
+// add migrations
+dotnet tool install --global dotnet-ef
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+*/
+
+//crud in controller
+	MySqlConnection connection = null;
+        MySqlCommand mySqlCommand = null;
+
+        public Controller(IConfiguration configuration )
+        {
+            connection = new MySqlConnection(configuration.GetSection("ConnectionStrings").GetSection("Default").Value); 
+        }
