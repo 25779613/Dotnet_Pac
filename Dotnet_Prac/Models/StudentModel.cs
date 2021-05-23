@@ -1,7 +1,10 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Dotnet_Prac.Models
 {
     public class StudentModel
     {
+        [Key]
         public int studentID{get;set;}
         public string studentName{get;set;}
 

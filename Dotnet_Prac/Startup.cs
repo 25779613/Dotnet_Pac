@@ -1,6 +1,8 @@
+using Dotnet_Prac.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,9 +26,10 @@ namespace Dotnet_Prac
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var config = Configuration["ConnectionStrings:Default"];
             services.AddControllersWithViews();
-            services.AddTransient<MySqlConnection>(_ => new MySqlConnection(Configuration["ConnectionStrings:Default"]));
-           // services.AddDbContext<StudentContext>(options => options.UseMySQL(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddTransient<MySqlConnection>(_ => new MySqlConnection(config));
+            services.AddDbContext<StudentContext>(options => options.UseMySQL(config));
 
         }
 
