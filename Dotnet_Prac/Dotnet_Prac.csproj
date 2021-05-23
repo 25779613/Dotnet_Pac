@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="MySql.EntityframeworkCore" Version="5.0.3.1" />
+    <PackageReference Include="MysqlConnector" Version="1.3.8" />
+  </ItemGroup>
+
 </Project>

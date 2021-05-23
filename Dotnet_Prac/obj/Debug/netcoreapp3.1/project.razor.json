@@ -14417,8 +14417,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\SALMAN\\Desktop\\Dotnet_prac\\Dotnet_Prac\\Views\\Student\\index.cshtml",
-      "TargetPath": "Views\\Student\\index.cshtml",
+      "FilePath": "c:\\Users\\SALMAN\\Desktop\\Dotnet_prac\\Dotnet_Prac\\Views\\Student\\Index.cshtml",
+      "TargetPath": "Views\\Student\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14442,8 +14442,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\SALMAN\\Desktop\\Dotnet_prac\\Dotnet_Prac\\Views\\Student\\list.cshtml",
-      "TargetPath": "Views\\Student\\list.cshtml",
+      "FilePath": "c:\\Users\\SALMAN\\Desktop\\Dotnet_prac\\Dotnet_Prac\\Views\\Student\\List.cshtml",
+      "TargetPath": "Views\\Student\\List.cshtml",
       "FileKind": "mvc"
     }
   ],
