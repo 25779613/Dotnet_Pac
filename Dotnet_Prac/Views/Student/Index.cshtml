@@ -9,16 +9,16 @@
 </style>   
 
 <div>
-    <form asp-controller="Student" asp-action ="Index" method ="post">
-        <input type="text" name ="studentName" placeholder="Enter name"/><br>
-        <input type="text" name ="studentEmail" placeholder="Enter email"/><br>
-        <input type="text" name ="studentNumber" placeholder="Enter student number"/><br>
-        <select name="subject">
+    <form asp-controller="Student" asp-action ="Index" method ="post" required>
+        <input type="text" name ="studentName" placeholder="Enter name" required/><br>
+        <input type="text" name ="studentEmail" placeholder="Enter email" required/><br>
+        <input type="text" name ="studentNumber" placeholder="Enter student number" required/><br>
+        <select name="subject" required>
             <option value="math">Math</option>
             <option value="science">Science</option>
             <option value="english">English</option>
         </select><br>
-        <textarea type ="text" name="studentDetails"></textarea><br>
+        <textarea type ="text" name="studentDetails" required></textarea><br>
         <button type ="submit">Submit</button>
     </form>
 </div>

@@ -67,3 +67,10 @@ C:\Users\SALMAN\Desktop\Dotnet_prac\Dotnet_Prac\bin\Debug\netcoreapp3.1\System.C
 C:\Users\SALMAN\Desktop\Dotnet_prac\Dotnet_Prac\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\SALMAN\Desktop\Dotnet_prac\Dotnet_Prac\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 C:\Users\SALMAN\Desktop\Dotnet_prac\Dotnet_Prac\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\SALMAN\Desktop\Dotnet_prac\Dotnet_Prac\bin\Debug\netcoreapp3.1\System.Web.Mvc.dll
+C:\Users\SALMAN\Desktop\Dotnet_prac\Dotnet_Prac\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+C:\Users\SALMAN\Desktop\Dotnet_prac\Dotnet_Prac\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+C:\Users\SALMAN\Desktop\Dotnet_prac\Dotnet_Prac\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+C:\Users\SALMAN\Desktop\Dotnet_prac\Dotnet_Prac\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+C:\Users\SALMAN\Desktop\Dotnet_prac\Dotnet_Prac\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+C:\Users\SALMAN\Desktop\Dotnet_prac\Dotnet_Prac\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll

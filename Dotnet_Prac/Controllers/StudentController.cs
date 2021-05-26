@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Dotnet_Prac.Controllers
 {
@@ -30,7 +31,7 @@ namespace Dotnet_Prac.Controllers
          public async Task<IActionResult> Index(string studentName,string studentEmail, string studentNumber,string subject,string studentDetails)
          { 
             await connection.OpenAsync();
-            mySqlCommand = new MySqlCommand("INSERT INTO students_table(studentName,studentEmail,studentNumber,subject,studentDetails) VALUES('" + studentName + "'," + studentEmail + "," + studentNumber + ",'" + subject + "','" + studentDetails + "')", connection);
+            mySqlCommand = new MySqlCommand("INSERT INTO students_table(studentName,studentEmail,studentNumber,subject,studentDetails) VALUES('" + studentName + "','" + studentEmail + "','" + studentNumber + "','" + subject + "','" + studentDetails + "')", connection);
             //mySqlCommand = new MySqlCommand("INSERT INTO (studentName,studentEmail,studentNumber,subject,studentDetails) VALUES('" + studentName + "'," + studentEmail + "," + studentNumber + ",'" + subject + "','" + studentDetails + "')",connection);
             var result = await mySqlCommand.ExecuteReaderAsync();
             await connection.CloseAsync();
@@ -38,12 +39,43 @@ namespace Dotnet_Prac.Controllers
          }
 
 
-         public IActionResult List()
+         public async Task<IActionResult> List()
          {
-             string[] subjects ={"math","science","english"};
-             ViewData["subjects"] = subjects;
+            await connection.OpenAsync();
+            mySqlCommand = new MySqlCommand("SELECT * FROM students_table",connection);
+            var result = await mySqlCommand.ExecuteReaderAsync();
+        
+            List<StudentModel> students = new List<StudentModel>();
+            while(await result.ReadAsync())
+            {
+                students.Add(new StudentModel()
+                {
+                    studentID = Int16.Parse(result.GetValue("studentID").ToString()),
+                    studentName = result.GetValue("studentName").ToString(),
+                    studentEmail = result.GetValue("studentEmail").ToString(),
+                    studentNumber = result.GetValue("studentNumber").ToString(),
+                    subject = result.GetValue("subject").ToString(),
+                    studentDetails = result.GetValue("studentDetails").ToString(),
+
+                }); ; 
+                
+            }
+            ViewData["students"]=students;
+            await connection.CloseAsync();
              return View();
              
          }
+
+        public async Task<IActionResult> Delete(string studentID)
+        {
+            await connection.OpenAsync();
+             mySqlCommand = new MySqlCommand("DELETE FROM students_table WHERE studentID = '"+Int16.Parse(studentID)+"'",connection);
+             var result = await mySqlCommand.ExecuteReaderAsync();
+
+             await connection.CloseAsync();
+            Console.WriteLine("StudentID:"+studentID);
+          return RedirectToAction("List");
+        }
+
     }
 }
