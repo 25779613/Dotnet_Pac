@@ -31,7 +31,7 @@ namespace Dotnet_Prac.Controllers
          public async Task<IActionResult> Index(string studentName,string studentEmail, string studentNumber,string subject,string studentDetails)
          { 
             await connection.OpenAsync();
-            mySqlCommand = new MySqlCommand("INSERT INTO students_table(studentName,studentEmail,studentNumber,subject,studentDetails) VALUES('" + studentName + "','" + studentEmail + "','" + studentNumber + "','" + subject + "','" + studentDetails + "')", connection);
+            mySqlCommand = new MySqlCommand("INSERT INTO students(studentName,studentEmail,studentNumber,subject,studentDetails) VALUES('" + studentName + "','" + studentEmail + "','" + studentNumber + "','" + subject + "','" + studentDetails + "')", connection);
             //mySqlCommand = new MySqlCommand("INSERT INTO (studentName,studentEmail,studentNumber,subject,studentDetails) VALUES('" + studentName + "'," + studentEmail + "," + studentNumber + ",'" + subject + "','" + studentDetails + "')",connection);
             var result = await mySqlCommand.ExecuteReaderAsync();
             await connection.CloseAsync();
@@ -42,7 +42,7 @@ namespace Dotnet_Prac.Controllers
          public async Task<IActionResult> List()
          {
             await connection.OpenAsync();
-            mySqlCommand = new MySqlCommand("SELECT * FROM students_table",connection);
+            mySqlCommand = new MySqlCommand("SELECT * FROM students",connection);
             var result = await mySqlCommand.ExecuteReaderAsync();
         
             List<StudentModel> students = new List<StudentModel>();
@@ -69,7 +69,7 @@ namespace Dotnet_Prac.Controllers
         public async Task<IActionResult> Delete(string studentID)
         {
             await connection.OpenAsync();
-             mySqlCommand = new MySqlCommand("DELETE FROM students_table WHERE studentID = '"+Int16.Parse(studentID)+"'",connection);
+             mySqlCommand = new MySqlCommand("DELETE FROM studentsWHERE studentID = '"+Int16.Parse(studentID)+"'",connection);
              var result = await mySqlCommand.ExecuteReaderAsync();
 
              await connection.CloseAsync();

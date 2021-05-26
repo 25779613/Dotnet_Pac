@@ -38,7 +38,7 @@ namespace Dotnet_Prac.Migrations
 
                     b.HasKey("studentID");
 
-                    b.ToTable("students_table");
+                    b.ToTable("students");
                 });
 #pragma warning restore 612, 618
         }

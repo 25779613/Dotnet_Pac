@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dotnet_Prac.Migrations
 {
     [DbContext(typeof(StudentContext))]
-    [Migration("20210523225607_InitialCreate")]
+    [Migration("20210526193043_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,7 +40,7 @@ namespace Dotnet_Prac.Migrations
 
                     b.HasKey("studentID");
 
-                    b.ToTable("students_table");
+                    b.ToTable("students");
                 });
 #pragma warning restore 612, 618
         }
