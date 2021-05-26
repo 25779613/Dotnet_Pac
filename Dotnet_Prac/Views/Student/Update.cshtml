@@ -1,0 +1,26 @@
+﻿<h1>Update</h1>
+
+<style>
+    input, select, textarea {
+        padding: 5px;
+        margin: 3px;
+    }
+</style>
+
+<div>
+    @{var student = ViewData["updateStudent"] as StudentModel; }
+
+    <form asp-controller="Student" asp-action="Update" method="post" required>
+        <input type="text" value="@student.studentID" readonly /><br />
+        <input type="text" name="studentName" value="@student.studentName" placeholder="Enter name" readonly /><br>
+        <input type="text" name="studentEmail" value="@student.studentEmail" required /><br>
+        <input type="text" name="studentNumber"  value="@student.studentNumber" readonly /><br>
+        <select name="subject" required>
+            <option value="math">Math</option>
+            <option value="science">Science</option>
+            <option value="english">English</option>
+        </select><br>
+        <textarea type="text" value="@student.studentDetails" required></textarea><br>
+        <button type="submit">update</button>
+    </form>
+</div>

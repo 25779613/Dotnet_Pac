@@ -77,5 +77,19 @@ namespace Dotnet_Prac.Controllers
           return RedirectToAction("List");
         }
 
+        public IActionResult Update(string studentID, string studentName, string studentEmail, string studentNumber, string subject, string studentDetails)
+        {
+            Console.WriteLine(studentID + studentName+"CINT");
+            StudentModel student = new StudentModel();
+            student.studentID = Convert.ToInt16(studentID);
+            student.studentName = studentName;
+            student.studentEmail = studentEmail;
+            student.studentNumber = studentNumber;
+            student.subject = subject;
+            student.studentDetails = studentDetails;
+            ViewData["updateStudent"] = student;
+            return View();
+        }
+
     }
 }

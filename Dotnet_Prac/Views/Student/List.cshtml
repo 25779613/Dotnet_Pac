@@ -21,15 +21,15 @@
 
     @foreach (var student in ViewData["students"] as List<StudentModel>)
     {
-    <form asp-action="Delete" asp-controller="Student" method="post">
+    <form asp-action="Update" asp-controller="Student" method="post">
         <tr>
             <td>@student.studentName</td>
             <td>@student.studentEmail</td>
             <td>@student.studentNumber</td>
             <td>@student.subject</td>
             <td>@student.studentDetails</td>
-            <td><button type="submit" name="studentID" value="@student.studentID">delete</button></td>
-            <td><button type="submit" name="updateButton">update</button></td>                      
+            <td><button type="submit" name="studentID" value="@student.studentID" asp-action="Delete">delete</button></td>
+            <td><button type="submit" name="updateButton" value="@student.studentID">update</button></td>                      
         </tr>
     </form>
         
