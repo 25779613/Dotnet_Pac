@@ -91,10 +91,10 @@ namespace Dotnet_Prac.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Update(string studentID, string studentName, string studentEmail, string studentNumber, string subject, string studentDetails)
+        public async Task<IActionResult> Update(string studentID, string studentEmail, string subject, string studentDetails)
         {
             await connection.OpenAsync();
-            mySqlCommand = new MySqlCommand();
+            mySqlCommand = new MySqlCommand("UPDATE student SET studentEmail='"+studentEmail+"',Wsubject='"+studentEmail+"',studentDetails='"+studentDetails+"'WHERE studentID='"+studentID+"'",connection);
             var result = mySqlCommand.ExecuteReaderAsync();
             await connection.CloseAsync();
             return RedirectToAction("List");
