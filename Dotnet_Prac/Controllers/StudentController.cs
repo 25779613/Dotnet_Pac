@@ -69,7 +69,7 @@ namespace Dotnet_Prac.Controllers
         public async Task<IActionResult> Delete(string studentID)
         {
             await connection.OpenAsync();
-             mySqlCommand = new MySqlCommand("DELETE FROM studentsWHERE studentID = '"+Int16.Parse(studentID)+"'",connection);
+             mySqlCommand = new MySqlCommand("DELETE FROM students WHERE studentID = '"+Int16.Parse(studentID)+"'",connection);
              var result = await mySqlCommand.ExecuteReaderAsync();
 
              await connection.CloseAsync();
@@ -79,7 +79,7 @@ namespace Dotnet_Prac.Controllers
 
         public IActionResult Edit(string studentID, string studentName, string studentEmail, string studentNumber, string subject, string studentDetails)
         {
-            Console.WriteLine(studentDetails + studentName+"CINT");
+            Console.WriteLine(studentDetails + studentName+"CINT"+subject);
             StudentModel student = new StudentModel();
             student.studentID = Convert.ToInt16(studentID);
             student.studentName = studentName;
@@ -93,11 +93,23 @@ namespace Dotnet_Prac.Controllers
 
         public async Task<IActionResult> Update(string studentID, string studentEmail, string subject, string studentDetails)
         {
-            await connection.OpenAsync();
-            mySqlCommand = new MySqlCommand("UPDATE student SET studentEmail='"+studentEmail+"',Wsubject='"+studentEmail+"',studentDetails='"+studentDetails+"'WHERE studentID='"+studentID+"'",connection);
-            var result = mySqlCommand.ExecuteReaderAsync();
-            await connection.CloseAsync();
-            return RedirectToAction("List");
+            try
+            {
+                await connection.OpenAsync();
+                mySqlCommand = new MySqlCommand("UPDATE students SET studentEmail='" + studentEmail + "',subject='" + subject + "',studentDetails='" + studentDetails + "'WHERE studentID='" + Convert.ToInt16(studentID )+ "'", connection);
+                var result = mySqlCommand.ExecuteReaderAsync();
+                await connection.CloseAsync();
+                Console.WriteLine(studentID + subject+studentDetails);
+                ViewData["updateMessage"] = "Updated";
+                return RedirectToAction("List");
+
+            }
+            catch (Exception e)
+            {
+                ViewData["updateMessage"] = "Didnt work"+e;
+                return RedirectToAction("List");
+            }
+           
         }
 
     }
